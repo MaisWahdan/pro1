@@ -1,6 +1,6 @@
 body {
     font-family: 'Red Hat Text', sans-serif;
-    background-color: #f0f0f5; /* خلفية فاتحة */
+    background-color: #f0f0f5;
     color: hsl(14, 65%, 9%);
     margin: 0;
     padding: 0;
@@ -61,7 +61,7 @@ body {
     max-width: 1440px;
     width: 100%;
     justify-content: space-between;
-    margin-top: 100px; /* المسافة بين الـ app bar والمحتوى */
+    margin-top: 100px; 
     padding: 20px;
     flex-direction: row;
 }
@@ -72,6 +72,7 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 1900px;
 }
 
 .section-title {
@@ -84,7 +85,7 @@ body {
 .dessert-items {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 70px;
 }
 
 .dessert-item {
@@ -112,12 +113,12 @@ body {
 }
 
 .add-to-cart {
-    background-color: white; /* خلفية بيضاء */
+    background-color: white;  
     color: hsl(14, 86%, 42%);
     border: 2px solid hsl(14, 86%, 42%);
     padding: 10px 15px;
     font-size: 1rem;
-    border-radius: 25px; /* حواف مستديرة */
+    border-radius: 25px; 
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -134,7 +135,7 @@ body {
 }
 
 .cart-icon {
-    background-color: white; /* خلفية بيضاء */
+    background-color: white; 
     border-radius: 50%;
     padding: 5px;
     display: flex;
@@ -204,7 +205,7 @@ body {
 /* الهواتف الذكية */
 @media (max-width: 768px) {
     .container {
-        flex-direction: column; /* ترتيب العناصر بشكل طبيعي (سلة التسوق تظهر في الأسفل) */
+        flex-direction: column; 
         padding: 10px;
     }
 
@@ -213,7 +214,7 @@ body {
     }
 
     .dessert-items {
-        grid-template-columns: 1fr; /* عرض عنصر واحد فقط في كل مرة */
+        grid-template-columns: 1fr; 
     }
 
     .add-to-cart {
@@ -224,7 +225,7 @@ body {
         flex: 1 1 100%;
         margin-left: 0;
         margin-top: 20px;
-        position: static; /* تأكد أن سلة التسوق تكون في الوضع الطبيعي ضمن التدفق وتبقى في الأسفل */
+        position: static; 
     }
 
     .cart img {
@@ -232,22 +233,4 @@ body {
     }
 }
 
-/* الأجهزة اللوحية */
-@media (max-width: 1024px) {
-    .dessert-items {
-        grid-template-columns: 1fr; /* عرض عنصر واحد فقط في كل مرة */
-    }
 
-    .container {
-        padding: 10px;
-    }
-
-    .cart {
-        margin-left: 10px;
-        height: auto;
-    }
-
-    .cart img {
-        width: 120px;
-    }
-}
