@@ -1,0 +1,146 @@
+body {
+    font-family: 'Red Hat Text', sans-serif;
+    background-color: #f0f0f5;
+    color: hsl(14, 65%, 9%);
+    margin: 0;
+    padding: 0;
+}
+
+.app-bar {
+    background-color: hsl(14, 86%, 42%);
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.app-bar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.app-bar h1 {
+    color: white;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.app-bar nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+}
+
+.app-bar nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.desserts {
+    width: 100%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: hsl(14, 65%, 9%);
+    text-align: center;
+}
+
+.dessert-item {
+    background-color: hsl(13, 31%, 94%);
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 20px;
+    overflow: hidden; /* Ensure content does not overflow */
+}
+
+.dessert-image-container {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.dessert-image {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+}
+
+.add-to-cart {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    color: hsl(14, 86%, 42%);
+    border: 2px solid hsl(14, 86%, 42%);
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% - 20px);
+}
+
+.add-to-cart svg {
+    margin-right: 8px;
+    fill: hsl(14, 86%, 42%);
+}
+
+.add-to-cart:hover {
+    background-color: hsl(14, 86%, 42%);
+    color: white;
+}
+
+.dessert-category {
+    color: hsl(7, 20%, 60%);
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.dessert-name {
+    color: hsl(14, 65%, 9%);
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.dessert-price {
+    color: hsl(7, 20%, 50%);
+    font-size: 1.1rem;
+    margin-top: 5px;
+}
+
+.cart {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.cart-empty img {
+    width: 100px;
+    margin: 20px auto;
+}
+
+.cart h2 {
+    font-size: 1.5rem;
+    color: hsl(14, 65%, 9%);
+}
+
+.cart p {
+    color: hsl(7, 20%, 60%);
+}

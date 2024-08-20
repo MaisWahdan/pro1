@@ -1,0 +1,191 @@
+body {
+    font-family: 'Red Hat Text', sans-serif;
+    background-color: #f0f0f5; /* خلفية فاتحة */
+    color: hsl(14, 65%, 9%);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.app-bar {
+    background-color: hsl(14, 86%, 42%);
+    color: white;
+    padding: 10px 20px;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.app-bar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.app-bar h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.app-bar nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.app-bar nav ul li {
+    margin-left: 20px;
+}
+
+.app-bar nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.app-bar nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    display: flex;
+    max-width: 1440px;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 100px; /* المسافة بين الـ app bar والمحتوى */
+    padding: 20px;
+}
+
+.desserts {
+    flex: 0 1 70%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: hsl(14, 65%, 9%);
+    text-align: center;
+}
+
+.dessert-items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.dessert-item {
+    background-color: hsl(13, 31%, 94%);
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.dessert-item:hover {
+    transform: translateY(-5px);
+}
+
+.dessert-image {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.add-to-cart {
+    background-color: white; /* خلفية بيضاء */
+    color: hsl(14, 86%, 42%);
+    border: 2px solid hsl(14, 86%, 42%);
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 25px; /* حواف مستديرة */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background-color: hsl(14, 86%, 42%);
+    color: white;
+}
+
+.cart-icon {
+    background-color: white; /* خلفية بيضاء */
+    border-radius: 50%;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+.add-to-cart svg {
+    fill: hsl(14, 86%, 42%);
+}
+
+.dessert-info {
+    text-align: left;
+}
+
+.dessert-category {
+    font-size: 0.9rem;
+    color: hsl(7, 20%, 60%);
+    margin-bottom: 5px;
+}
+
+.dessert-name {
+    font-size: 1.25rem;
+    color: hsl(14, 65%, 9%);
+    margin-bottom: 5px;
+}
+
+.dessert-price {
+    font-size: 1rem;
+    color: hsl(14, 65%, 9%);
+    margin-bottom: 5px;
+}
+
+.cart {
+    flex: 0 1 25%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: sticky;
+    top: 120px; /* لجعل السلة ثابتة عند التمرير */
+}
+
+.cart h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: hsl(14, 65%, 9%);
+}
+
+.cart img {
+    width: 150px;
+    margin-bottom: 15px;
+}
+
+.cart p {
+    font-size: 1rem;
+    color: hsl(14, 65%, 9%);
+}
