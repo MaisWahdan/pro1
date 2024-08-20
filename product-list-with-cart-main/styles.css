@@ -116,7 +116,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: 50%;
+    right: 50%;
+    transform: translateX(50%);/* in middlie  */
     text-align: center;
     margin-bottom: 15px;
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -172,7 +174,7 @@ body {
     text-align: center;
     position: sticky;
     height: 400px;
-    margin-left:10px ;
+    margin-left: 20px;
    
 }
 
