@@ -63,6 +63,7 @@ body {
     justify-content: space-between;
     margin-top: 100px; /* المسافة بين الـ app bar والمحتوى */
     padding: 20px;
+    flex-direction: row;
 }
 
 .desserts {
@@ -93,6 +94,11 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: transform 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    margin-bottom: 20px; /* مسافة بين كل بطاقة */
 }
 
 .dessert-item:hover {
@@ -116,12 +122,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50%;
-    right: 50%;
-    transform: translateX(50%);/* in middlie  */
-    text-align: center;
-    margin-bottom: 15px;
+    margin-top: 10px;
     transition: background-color 0.3s ease, color 0.3s ease;
+    width: 80%;
+    margin: 0 auto;
 }
 
 .add-to-cart:hover {
@@ -145,6 +149,7 @@ body {
 
 .dessert-info {
     text-align: left;
+    margin-bottom: 10px;
 }
 
 .dessert-category {
@@ -172,10 +177,10 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    position: sticky;
-    height: 400px;
     margin-left: 20px;
-   
+    position: sticky;
+    top: 100px;
+    height: 400px;
 }
 
 .cart h2 {
@@ -192,4 +197,57 @@ body {
 .cart p {
     font-size: 1rem;
     color: hsl(14, 65%, 9%);
+}
+
+/* Media Queries */
+
+/* الهواتف الذكية */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* ترتيب العناصر بشكل طبيعي (سلة التسوق تظهر في الأسفل) */
+        padding: 10px;
+    }
+
+    .desserts {
+        flex: 1 1 100%;
+    }
+
+    .dessert-items {
+        grid-template-columns: 1fr; /* عرض عنصر واحد فقط في كل مرة */
+    }
+
+    .add-to-cart {
+        width: 80%;
+    }
+
+    .cart {
+        flex: 1 1 100%;
+        margin-left: 0;
+        margin-top: 20px;
+        position: static; /* تأكد أن سلة التسوق تكون في الوضع الطبيعي ضمن التدفق وتبقى في الأسفل */
+    }
+
+    .cart img {
+        width: 100px;
+    }
+}
+
+/* الأجهزة اللوحية */
+@media (max-width: 1024px) {
+    .dessert-items {
+        grid-template-columns: 1fr; /* عرض عنصر واحد فقط في كل مرة */
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    .cart {
+        margin-left: 10px;
+        height: auto;
+    }
+
+    .cart img {
+        width: 120px;
+    }
 }

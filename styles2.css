@@ -66,6 +66,8 @@ body {
     text-align: center;
     margin-bottom: 20px;
     overflow: hidden; /* Ensure content does not overflow */
+    margin-bottom: 20px;
+    
 }
 
 .dessert-image-container {
@@ -87,14 +89,15 @@ body {
     background-color: white;
     color: hsl(14, 86%, 42%);
     border: 2px solid hsl(14, 86%, 42%);
-    padding: 10px 15px;
+    padding: 8px 16px;
     font-size: 1rem;
     border-radius: 25px;
-    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     width: calc(100% - 20px);
+    margin-bottom: 50px;
+ 
 }
 
 .add-to-cart svg {
@@ -127,13 +130,14 @@ body {
 }
 
 .cart {
-    margin-top: 40px;
+    margin-top: 10px;
+    margin-bottom: 1000px;
     text-align: center;
 }
 
 .cart-empty img {
     width: 100px;
-    margin: 20px auto;
+    margin: 20 0px 100px 100px 200px;
 }
 
 .cart h2 {
