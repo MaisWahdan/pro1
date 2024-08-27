@@ -22,6 +22,20 @@ carbonNeutralElement.style.display = 'none';
 emptyCartMessage.style.display = 'flex';
 confirmOrderBtn.style.display = 'none';
 
+// Function to save cart to local storage
+function saveCartToLocalStorage() {
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+// Function to load cart from local storage
+function loadCartFromLocalStorage() {
+    const storedCart = localStorage.getItem('cart');
+    if (storedCart) {
+        cart = JSON.parse(storedCart);
+        displayCart();
+    }
+}
+
 // Function to add item to cart
 function addToCart(itemName, itemPrice, quantity, imageUrl) {
     const itemInCart = cart.find(item => item.name === itemName);
@@ -32,6 +46,7 @@ function addToCart(itemName, itemPrice, quantity, imageUrl) {
         cart.push({ name: itemName, price: itemPrice, quantity: 1, image: imageUrl }); // إضافة عنصر جديد إلى السلة بكمية 1
     }
 
+    saveCartToLocalStorage(); // Save cart to local storage
     displayCart(); // عرض السلة المحدثة
 }
 
@@ -48,7 +63,9 @@ function updateCart(itemName, itemPrice, quantity) {
         cart.push({ name: itemName, price: itemPrice, quantity });
     }
 
+    saveCartToLocalStorage(); // Save cart to local storage
     displayCart();
+    console.log(cart);
 }
 
 // Function to display items in the cart
@@ -94,12 +111,40 @@ function displayCart() {
             } else {
                 cart.splice(index, 1); // Remove item from array if quantity is 1
             }
+
+            // Update button and quantity controls state
+            updateButtonAndControls(item.name);
+
+            saveCartToLocalStorage(); // Save cart to local storage
             displayCart(); // Update cart display
         });
     });
 
     cartItemsCount.textContent = `Your Cart (${totalItems})`; // Display the total number of items in the cart
     totalPriceElement.textContent = `Total: $${totalPrice.toFixed(2)}`; // Update total price
+}
+
+// Function to update button and quantity controls state
+function updateButtonAndControls(itemName) {
+    const itemElement = [...document.querySelectorAll('.dessert-item')].find(el => el.querySelector('.dessert-name').textContent === itemName);
+    
+    if (itemElement) {
+        const addToCartButton = itemElement.querySelector('.add-to-cart');
+        const quantityControls = itemElement.querySelector('.quantity-controls');
+        const quantityElement = itemElement.querySelector('.quantity');
+
+        const itemInCart = cart.find(item => item.name === itemName);
+
+        if (itemInCart) {
+            addToCartButton.classList.add('hidden');  // Hide the "Add to Cart" button
+            quantityControls.classList.remove('hidden');  // Show the quantity controls
+            quantityElement.textContent = itemInCart.quantity;  // Update quantity display on button
+        } else {
+            addToCartButton.classList.remove('hidden');  // Show the "Add to Cart" button again
+            quantityControls.classList.add('hidden');  // Hide the quantity controls
+            quantityElement.textContent = 1;  // Reset quantity display
+        }
+    }
 }
 
 // Event listeners for buttons
@@ -202,6 +247,7 @@ confirmOrderBtn.addEventListener('click', openModal);
 // Function to reset everything for a new order
 function resetForNewOrder() {
     cart = [];
+    saveCartToLocalStorage(); // Save empty cart to local storage
     displayCart();
     addToCartButtons.forEach(button => {
         const itemElement = button.closest('.dessert-item');
@@ -225,3 +271,8 @@ window.addEventListener('click', (e) => {
         closeModal();
     }
 });
+
+// Load cart on page load
+window.onload = function() {
+    loadCartFromLocalStorage();
+};
